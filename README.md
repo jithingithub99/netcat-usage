@@ -22,10 +22,12 @@ Install netcat in prometheus-bkp-pod & prometheus-0
 
 Make ready the pod prometheus-0 to send the data to newly created pod
 
-On receiving pod (prometheus-bkp-pod) execute below command
+On data receiving pod (prometheus-bkp-pod) execute below command
 
 
  `` nc -l -p 1234 > prometheus-bkp.21122021.tar.gz ``
+ 
+ where 1234 is the network port 
 
 On sending pod (prometheus-0) execute below commands
 
