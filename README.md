@@ -14,17 +14,26 @@ change to volume mounted directory
 
 `` cd /prometheus-bkp ``
 
-installed netcat in prometheus-bkp-pod & prometheus-0 
-apt get update
-apt install netcat
+Install netcat in prometheus-bkp-pod & prometheus-0 
 
-make ready pod prometheus-0 to send the data to newly created pod
+`` apt get update ``
+`` apt install netcat ``
 
-on receiving pod (prometheus-bkp-pod)
+Make ready the pod prometheus-0 to send the data to newly created pod
+
+On receiving pod (prometheus-bkp-pod) execute below command
 
 
- nc -l -p 1234 > prometheus-bkp.21122021.tar.gz
+ `` nc -l -p 1234 > prometheus-bkp.21122021.tar.gz ``
 
-on sending pod (prometheus-0)
- nc -w 3 10.244.10.153  1234 < prometheus-bkp.21122021.tar.gz    
- (where 10.244.10.153 is the IP address of newly created pod (prometheus-bkp-pod) -we can get the ip using "k get pod prometheus-bkp-pod -n monitoring"
+On sending pod (prometheus-0) execute below commands
+
+`` nc -w 3 10.244.10.153  1234 < prometheus-bkp.21122021.tar.gz `` 
+
+ (Where 10.244.10.153 is the IP address of newly created pod (prometheus-bkp-pod)
+ 
+ We can get the ip using  `` k get pod prometheus-bkp-pod -n monitoring ``
+ 
+Verify data has been copied from kubernetes pod to destination system
+
+
