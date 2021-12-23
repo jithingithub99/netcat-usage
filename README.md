@@ -10,13 +10,14 @@ log in to  prometheus-bkp-pod and verify the 30gb pvc volume is mounted
 
 `` kex sh ``
 
-change to volume mounted directory 
+Select the pod and change to volume mounted directory 
 
 `` cd /prometheus-bkp ``
 
 Install netcat in prometheus-bkp-pod & prometheus-0 
 
 `` apt get update ``
+
 `` apt install netcat ``
 
 Make ready the pod prometheus-0 to send the data to newly created pod
