@@ -39,4 +39,6 @@ On sending pod (prometheus-0) execute below commands
  
 Verify data has been copied from kubernetes pod to destination pod
 
+For safer side later created a deployment and pvc and kept data inside the pvc 
+
 
