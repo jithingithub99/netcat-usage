@@ -1,8 +1,8 @@
-### File copy from pod to remote system using netcat ####
+### File copy from pod to pod using netcat ####
 
 
-We wanted to copy 20GB prometheus data file ( **prometheus-bkp.21122021.tar.gz**)from a pod (**prometheus-0**; namespace is monitoring) to  another system in customer environment
-we were getting "unexpected eof" error while copying 20gb file from pod to local/remote system.This will copy some amount of mb file and stopped with error
+We wanted to copy 20GB prometheus data file ( **prometheus-bkp.21122021.tar.gz**)from a pod (**prometheus-0**; namespace is monitoring) to  another pod in customer environment
+we were getting "unexpected eof" error while copying 20gb file from pod to pod.This will copy some amount of mb file and stopped with error
 So as a solution we tried using netcat utility and it was successfull.
 
 First we have a created pod (**prometheus-bkp-pod**) and a pvc (**prometheus-bkp-pvc**) (50gb) attached to this pod
@@ -10,7 +10,7 @@ log in to  prometheus-bkp-pod and verify the 30gb pvc volume is mounted
 
 `` kex sh ``
 
-Select the pod and change to volume mounted directory 
+Select the  pod and change to volume mounted directory 
 
 `` cd /prometheus-bkp ``
 
