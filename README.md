@@ -35,7 +35,7 @@ On sending pod (prometheus-0) execute below commands
 
  (Where 10.244.10.153 is the IP address of newly created pod (prometheus-bkp-pod)
  
- We can get the ip using  `` k get pod prometheus-bkp-pod -n monitoring ``
+ We can get the ip using  `` k get pod prometheus-bkp-pod -o wide -n monitoring ``
  
 Verify data has been copied from kubernetes pod to destination pod
 
